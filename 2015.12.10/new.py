@@ -20,7 +20,7 @@ while True:
         packet = raw_input('Input packet.\n')
         password = raw_input('Input password.\n')
         telNum = raw_input('Input target tel number.\n')
-        emptyList.pop(boxToSet)
+        emptyList.pop(emptyList.index(boxToSet))
         boxes[boxToSet] = {'packet': packet, 'password': password, 'telNum': telNum}
         print('Set finished.')
     elif op == '1':
