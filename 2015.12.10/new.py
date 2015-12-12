@@ -46,5 +46,6 @@ while True:
             print(targetPacket)
             emptyList.append(targetX)
             emptyList = list(set(emptyList))
+            boxes[boxToSet] = 'empty'
         print('Get finished.')
 
