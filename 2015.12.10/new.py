@@ -4,6 +4,7 @@ op = '0'
 emptyList = range(boxCount)
 boxes = {}
 boxes = boxes.fromkeys(box, 'empty')
+courierPwd = ['1', '2', '3']
 
 while True:
     op = raw_input('0 for set, 1 for get.\n')
@@ -15,13 +16,17 @@ while True:
         if emptyList == []:
             print('Error. Box full.')
             continue
-        while boxToSet not in emptyList:
-            boxToSet = input('Input a valid box number to set.\n')
-        packet = raw_input('Input packet.\n')
-        password = raw_input('Input password.\n')
-        telNum = raw_input('Input target tel number.\n')
-        emptyList.pop(emptyList.index(boxToSet))
-        boxes[boxToSet] = {'packet': packet, 'password': password, 'telNum': telNum}
+        courier = raw_input('Input courier password.\n')
+        if courier not in courierPwd:
+            print('Courier password incorrect.')
+        else:
+            while boxToSet not in emptyList:
+                boxToSet = input('Input a valid box number to set.\n')
+            packet = raw_input('Input packet.\n')
+            password = raw_input('Input password.\n')
+            telNum = raw_input('Input target tel number.\n')
+            emptyList.pop(emptyList.index(boxToSet))
+            boxes[boxToSet] = {'packet': packet, 'password': password, 'telNum': telNum}
         print('Set finished.')
     elif op == '1':
         print('In get mode.')
