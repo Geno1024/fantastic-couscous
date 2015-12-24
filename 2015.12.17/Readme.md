@@ -1,2 +1,2 @@
 Question:
-	A typing game.
+	A password management tool.
